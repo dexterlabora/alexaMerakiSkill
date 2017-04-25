@@ -1,11 +1,16 @@
+// Copy this Amazon AWS Lambda function 
+
+
 // Global Variables
-const APIKEY = "00aee702e3920b9ac9253db80ccb6c310e7d74c1"; // Your API Key
-const SHARD = "n142"; // or  dashboard
-const ORGID = "383018" // Your Organization ID
-const NETID = "L_642888846807138511" // Your Network ID
+const APIKEY = "YourAPIKey"; // Your API Key
+const ORGID = "YourOrgId"; // Your Organization ID
+const NETID = "YourNetID"; // Your Network ID
+const SERIAL = "YourSerial"; // Your Serial Number (for clients on a device)
+const SHARD = "dashboard"; // or  n123
 
-
-
+// ****************
+// Application
+// ****************
 exports.handler = (event, context) => {
     console.log("event",event);
     
@@ -129,7 +134,7 @@ exports.handler = (event, context) => {
     // Set API call options
     options = {
       hostname : HOSTNAME,
-      path: "/api/v0/devices/Q2LD-F9T7-PWWB/clients?timespan=300",
+      path: "/api/v0/devices/"+SERIAL+"/clients?timespan=300",
       headers: HEADERS
     };
     
@@ -159,20 +164,20 @@ exports.handler = (event, context) => {
     })
   }
 
-    // Helper Function - Filter top values in list
-    function getTopN(arr, prop, n) {
-        // clone before sorting, to preserve the original array
-        var clone = arr.slice(0); 
-    
-        // sort descending
-        clone.sort(function(x, y) {
-            if (x[prop] == y[prop]) return 0;
-            else if (parseInt(x[prop]) < parseInt(y[prop])) return 1;
-            else return -1;
-        });
-    
-        return clone.slice(0, n || 1);
-    }
+  // Helper Function - Filter top values in list
+  function getTopN(arr, prop, n) {
+      // clone before sorting, to preserve the original array
+      var clone = arr.slice(0); 
+  
+      // sort descending
+      clone.sort(function(x, y) {
+          if (x[prop] == y[prop]) return 0;
+          else if (parseInt(x[prop]) < parseInt(y[prop])) return 1;
+          else return -1;
+      });
+  
+      return clone.slice(0, n || 1);
+  }
 
   function getTrafficAnalysis(){
     console.log("IntentRequest: GetTrafficAnalysis");
@@ -241,9 +246,10 @@ exports.handler = (event, context) => {
       })
   }
 
-
+  // ****************
   // Alexa Logic
-
+  // ****************
+  
   try {
     if (event.session.new) {
       // New Session

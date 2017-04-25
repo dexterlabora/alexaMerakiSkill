@@ -1,0 +1,87 @@
+{
+  "intents": [
+    {
+      "name": "AMAZON.CancelIntent",
+      "samples": []
+    },
+    {
+      "name": "AMAZON.HelpIntent",
+      "samples": []
+    },
+    {
+      "name": "AMAZON.StopIntent",
+      "samples": []
+    },
+    {
+      "name": "GetClients",
+      "samples": [
+        "clients",
+        "clients on AP",
+        "clients in lounge",
+        "clients in living room"
+      ],
+      "slots": []
+    },
+    {
+      "name": "GetDaysToRenew",
+      "samples": [
+        "how long until my license is due",
+        "how long until my license expires",
+        "how long until I have to pay Meraki",
+        "how long until I have to pay Joe"
+      ],
+      "slots": [
+        {
+          "name": "FromDate",
+          "type": "AMAZON.DATE",
+          "samples": []
+        }
+      ]
+    },
+    {
+      "name": "GetDeviceList",
+      "samples": [
+        "devices",
+        "network devices",
+        "meraki kit"
+      ],
+      "slots": []
+    },
+    {
+      "name": "GetLicenses",
+      "samples": [
+        "licesense",
+        "license",
+        "expiration date",
+        "licenses"
+      ],
+      "slots": []
+    },
+    {
+      "name": "GetNetworks",
+      "samples": [
+        "networks",
+        "my networks"
+      ],
+      "slots": []
+    },
+    {
+      "name": "GetOrganisation",
+      "samples": [
+        "organisation",
+        "organisation name"
+      ],
+      "slots": []
+    },
+    {
+      "name": "GetTrafficAnalysis",
+      "samples": [
+        "traffic analysis",
+        "interesting traffic",
+        "what's going on on my network",
+        "to spy on my users"
+      ],
+      "slots": []
+    }
+  ]
+}
