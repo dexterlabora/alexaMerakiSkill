@@ -1,7 +1,7 @@
 
 # Alexa Skill with the Cisco Meraki Dashboard API
 
-This is a simple demonstration of using the Meraki Dashboard API with Alexa
+This is a simple demonstration using the Meraki Dashboard API with Alexa.
 
 Get status for your Organization, Network, Device, Client and License status
 
