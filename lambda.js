@@ -1,4 +1,28 @@
-// Copy this Amazon AWS Lambda function 
+/* Alexa Skill for Cisco Meraki
+*
+* This is a simple demonstration of using the Meraki Dashboard API with Alexa
+*
+* Ask for Organization, Network, Device, Client and License status
+* 
+*
+* Copy this code into the code editor in AWS Lambda Service for your Alexa skill.
+* Update the Global Variables with your content. 
+*
+* Copy the intents.js file contents into the Interaction Model's Code Editor 
+*   The intents file will be used to trigger the various functions based on 
+*   utterances. Review that file for keywords and phrases.
+*   
+*
+* More information on the Meraki Dashboard API
+* http://developers.meraki.com
+*
+*
+* Written By Steve Harrison & Cory Guynn
+*
+* MIT LICENSE, 2017
+*/
+
+ 
 
 
 // Global Variables
@@ -6,7 +30,7 @@ const APIKEY = "YourAPIKey"; // Your API Key
 const ORGID = "YourOrgId"; // Your Organization ID
 const NETID = "YourNetID"; // Your Network ID
 const SERIAL = "YourSerial"; // Your Serial Number (for clients on a device)
-const SHARD = "dashboard"; // or  n123
+const SHARD = "dashboard"; // example:  n142
 
 // ****************
 // Application
@@ -44,7 +68,9 @@ exports.handler = (event, context) => {
         response.on('end', () => {
           console.log("response body: ",body);
           var data = JSON.parse(body)
-          var orgName = data[0].name   
+          var orgName = data[0].name;   
+          var orgId = data[0].id;
+          console.log("Organization Name: "+orgName+" -- ID: "+orgId);
           context.succeed(
             generateResponse(
               buildSpeechletResponse(`Your Meraki organization is ${orgName}`, true), 
@@ -249,7 +275,7 @@ exports.handler = (event, context) => {
   // ****************
   // Alexa Logic
   // ****************
-  
+
   try {
     if (event.session.new) {
       // New Session
