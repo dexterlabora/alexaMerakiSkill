@@ -1,19 +1,19 @@
 {
   "intents": [
     {
-      "name": "AMAZON.CancelIntent",
+      "intent": "AMAZON.CancelIntent",
       "samples": []
     },
     {
-      "name": "AMAZON.HelpIntent",
+      "intent": "AMAZON.HelpIntent",
       "samples": []
     },
     {
-      "name": "AMAZON.StopIntent",
+      "intent": "AMAZON.StopIntent",
       "samples": []
     },
     {
-      "name": "GetClients",
+      "intent": "GetClients",
       "samples": [
         "clients",
         "clients on AP",
@@ -23,7 +23,7 @@
       "slots": []
     },
     {
-      "name": "GetDaysToRenew",
+      "intent": "GetDaysToRenew",
       "samples": [
         "how long until my license is due",
         "how long until my license expires",
@@ -39,7 +39,7 @@
       ]
     },
     {
-      "name": "GetDeviceList",
+      "intent": "GetDeviceList",
       "samples": [
         "devices",
         "network devices",
@@ -48,7 +48,7 @@
       "slots": []
     },
     {
-      "name": "GetLicenses",
+      "intent": "GetLicenses",
       "samples": [
         "licesense",
         "license",
@@ -58,7 +58,7 @@
       "slots": []
     },
     {
-      "name": "GetNetworks",
+      "intent": "GetNetworks",
       "samples": [
         "networks",
         "my networks"
@@ -66,7 +66,7 @@
       "slots": []
     },
     {
-      "name": "GetOrganisation",
+      "intent": "GetOrganisation",
       "samples": [
         "organisation",
         "organisation name"
@@ -74,7 +74,7 @@
       "slots": []
     },
     {
-      "name": "GetTrafficAnalysis",
+      "intent": "GetTrafficAnalysis",
       "samples": [
         "traffic analysis",
         "interesting traffic",
